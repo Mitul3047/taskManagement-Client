@@ -9,7 +9,7 @@ const Banner = () => {
                     We Help To Manage <br />
                     Your Task Here
                 </h1>
-                <Link><button className='btn rounded-sm mt-10 bg-gray-600 text-white border-none'>Explore Us <FaArrowRight></FaArrowRight></button></Link>
+                <Link to={'dashboard'}><button className='btn rounded-sm mt-10 bg-gray-600 text-white border-none'>Explore Us <FaArrowRight></FaArrowRight></button></Link>
             </div>
             <img className='w-64 shadow-sm' src={bannerImg} alt="" />
         </div>
