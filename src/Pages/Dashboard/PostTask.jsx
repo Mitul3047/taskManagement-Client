@@ -54,23 +54,24 @@ const PostTask = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 mt-6 rounded shadow-md">
+   <div className='text-slate-300'>
+     <div className="max-w-md mx-auto bg-gray-400 p-6 mt-6 rounded shadow-md">
       <h2 className="text-2xl font-semibold mb-6">Add a Task</h2>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="taskTitle" className="block text-gray-700 font-semibold mb-2">Task Title</label>
-          <input type="text" id="taskTitle" name="title" value={task.title} onChange={handleChange} placeholder="Enter task title" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" />
+          <input type="text" id="taskTitle" required name="title" value={task.title} onChange={handleChange} placeholder="Enter task title" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 text-black" />
         </div>
 
         <div className="mb-4">
           <label htmlFor="taskDescription" className="block text-gray-700 font-semibold mb-2">Task Description</label>
-          <textarea id="taskDescription" name="description" value={task.description} onChange={handleChange} placeholder="Enter task description" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"></textarea>
+          <textarea id="taskDescription" required name="description" value={task.description} onChange={handleChange} placeholder="Enter task description" className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 text-black"></textarea>
         </div>
 
         <div className="mb-4">
           <label htmlFor="taskPriority" className="block text-gray-700 font-semibold mb-2">Priority</label>
-          <select id="taskPriority" name="priority" value={task.priority} onChange={handleChange} className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500">
+          <select id="taskPriority" required name="priority" value={task.priority} onChange={handleChange} className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 text-black">
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
@@ -79,14 +80,15 @@ const PostTask = () => {
 
         <div className="mb-4">
           <label htmlFor="dueDate" className="block text-gray-700 font-semibold mb-2">Due Date</label>
-          <input type="date" id="dueDate" name="dueDate" value={task.dueDate} onChange={handleChange} className="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" />
+          <input type="date" id="dueDate" name="dueDate" value={task.dueDate} onChange={handleChange} className="text-black w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" required/>
         </div>
 
         <div className="flex justify-end">
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Add Task</button>
+          <button type="submit" className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add Task</button>
         </div>
       </form>
     </div>
+   </div>
   );
 };
 
