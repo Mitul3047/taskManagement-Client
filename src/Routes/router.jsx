@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import PostTask from "../Pages/Dashboard/PostTask";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/postTask',
-                element:4567
+                element:<PostTask></PostTask>
             }
         ]
     }

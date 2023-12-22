@@ -2,13 +2,15 @@
 
 const DashNav = () => {
     return (
-        <div className="h-screen w-52 bg-gray-600">
-           <div>
-            <h3>Post A TasK</h3>
-            <h3>All Task</h3>
+        <div className="  bg-gray-600 p-4">
+           <div className=" flex  justify-center items-center">
+        <ul className="space-x-5 flex  justify-center items-center">
+            <li className="btn-ghost cursor-pointer  p-2 rounded-lg">Post A TasK</li>
+            <li className="btn-ghost cursor-pointer p-2 rounded-lg">All Task</li>
+        </ul>
            </div>
         </div>
     );
-};
+};  
 
 export default DashNav;
