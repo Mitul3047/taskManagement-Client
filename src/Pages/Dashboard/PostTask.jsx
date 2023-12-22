@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const PostTask = () => {
+  const {user} = useContext(AuthContext)
   const [task, setTask] = useState({
     title: '',
     description: '',
     priority: 'low',
-    dueDate: ''
+    dueDate: '',
+    status: 'pending',
+    email: user.email
   });
 
   const handleChange = (e) => {
@@ -21,7 +25,7 @@ const PostTask = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/task', {
+      const response = await fetch('https://task-management-server-hazel.vercel.app/task', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -84,7 +88,7 @@ const PostTask = () => {
         </div>
 
         <div className="flex justify-end">
-          <button type="submit" className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add Task</button>
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add Task</button>
         </div>
       </form>
     </div>
